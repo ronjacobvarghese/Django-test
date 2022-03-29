@@ -1,0 +1,20 @@
+{% extends "layout.html" %} 
+{% load static %}%
+
+{% block page_title %} {{ header|title }} Challenge
+{% endblock %} 
+
+{% block styles %}
+  <link rel = "stylesheet" href="{% static "challenges/includes/header.css" %}"/>
+  <link rel = "stylesheet" href = "{% static "challenges/challenge.css" %}" />
+{% endblock %}
+
+{% block content %}
+
+{% include "challenges/shared/header.html" %}
+<h1>This {{ header|title }}'s Challenge</h1>
+{%if text%}
+<h2>{{ text }}</h2>
+{%else%}
+<h2 class = "fallback" >There is not challenge</h2>
+{%endif%} {% endblock %}
